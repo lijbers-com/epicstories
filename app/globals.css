@@ -1,26 +1,297 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Colors */
+    --color-primary: #544449;
+    --color-primary-light: #665560;
+    --color-secondary: #F5F5F0;
+    --color-secondary-dark: #E8E8E0;
+    --color-accent: #FF4500;
+    --color-accent-muted: #CC3700;
+    
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    
+    /* Animation Timing */
+    --duration-instant: 100ms;
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --duration-slower: 700ms;
+    
+    /* Easing Functions */
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  [data-theme="dark"] {
+    --color-primary: #F5F5F0;
+    --color-primary-light: #FFFFFF;
+    --color-secondary: #0A0A0A;
+    --color-secondary-dark: #000000;
+  }
+
+  * {
+    border-color: #D4D4D4;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #544449;
+  }
+
+  body {
+    background-color: #544449;
+    color: #F5F5F0;
+    font-family: var(--font-outfit), "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Outfit Font Styles */
+  .outfit-light {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .outfit-regular {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .outfit-medium {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .outfit-semibold {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .outfit-bold {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .outfit-extrabold {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .outfit-black {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 2.2rem + 4vw, 4rem);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(2.25rem, 1.8rem + 2.25vw, 3rem);
+    line-height: 1.1;
+  }
+
+  h3 {
+    font-size: clamp(1.875rem, 1.5rem + 1.875vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+    line-height: 1.2;
+  }
+
+  h5 {
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    line-height: 1.3;
+  }
+
+  h6 {
+    font-size: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    line-height: 1.3;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* Remove default link styling */
+  a {
+    color: inherit;
+    text-decoration: none !important;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  a:visited {
+    color: inherit;
+    text-decoration: none !important;
+  }
+
+  a:link {
+    color: inherit;
+    text-decoration: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container {
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1440px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background-color: #544449;
+    color: #F5F5F0;
+  }
+
+  .btn-primary:hover {
+    background-color: #665560;
+  }
+
+  .story-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .link-hover {
+    position: relative;
+  }
+
+  .link-hover:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #FF4500;
+    transition: all 0.3s;
+  }
+
+  .link-hover:hover:after {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  /* Smooth Scrolling for Sections */
+  .scroll-section {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Loading States */
+  .skeleton {
+    background-color: #F0F0F0;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    border-radius: 0.25rem;
+  }
+
+  /* Manage Expectations Tile Styling */
+  @media (min-width: 1024px) {
+    .manage-expectations-tile {
+      min-height: 700px !important;
+    }
+  }
+
+  .manage-title {
+    font-size: clamp(3rem, 8vw, 5.625rem) !important;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
