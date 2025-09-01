@@ -14,11 +14,11 @@ Epic Stories is built as a modern, performant web application using Next.js 14+ 
 - **State Management**: Zustand (if needed)
 - **Forms**: React Hook Form + Zod validation
 
-### Backend/CMS
-- **Content Management**: Contentful/Sanity
-- **API**: Next.js API Routes
-- **Database**: PostgreSQL (if needed)
-- **Authentication**: NextAuth.js (if needed)
+### Backend/Content
+- **Content Management**: Individual story pages built with Claude Code
+- **API**: Next.js API Routes (for contact form, etc.)
+- **Database**: File-based content (no external CMS)
+- **Authentication**: Not required for current setup
 
 ### Infrastructure
 - **Hosting**: Vercel
@@ -37,10 +37,11 @@ Epic Stories is built as a modern, performant web application using Next.js 14+ 
 │    (React Components + Routing)     │
 ├─────────────────────────────────────┤
 │        API Layer (Next.js)          │
-│         /api/* endpoints             │
+│      /api/* endpoints (minimal)     │
 ├─────────────────────────────────────┤
-│          External Services          │
-│    (CMS, Analytics, Storage)        │
+│          File-based Content         │
+│     Individual Story Pages          │
+│    Built with Claude Code           │
 └─────────────────────────────────────┘
 ```
 
@@ -49,13 +50,12 @@ Epic Stories is built as a modern, performant web application using Next.js 14+ 
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── (main)/            # Main layout group
-│   │   ├── page.tsx       # Homepage
-│   │   ├── about/         # About page
-│   │   └── contact/       # Contact page
-│   ├── stories/           # Story pages
-│   │   └── [slug]/        # Dynamic story routes
-│   ├── api/              # API routes
+│   ├── page.tsx           # Homepage
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── etihad/            # Etihad story page
+│   ├── digital-experiences/ # Coming soon template
+│   ├── api/              # API routes (minimal)
 │   └── layout.tsx        # Root layout
 ├── components/           # React components
 │   ├── ui/              # Basic UI components
@@ -85,9 +85,9 @@ components/
 ```
 
 ### 2. Data Fetching Strategy
-- **Static Generation**: Homepage, About, Contact
-- **Dynamic Rendering**: Story pages (with caching)
-- **Client-Side**: Interactive elements, filters
+- **Static Generation**: All pages (Homepage, About, Contact, Individual Stories)
+- **File-based Content**: Content embedded directly in React components
+- **Client-Side**: Interactive elements, animations, form submissions
 
 ### 3. Animation Strategy
 ```typescript
@@ -178,17 +178,18 @@ npm run dev      # Start development server
 npm run build    # Build production bundle
 npm run start    # Start production server
 npm run lint     # Run ESLint
-npm run test     # Run tests
 ```
 
+### Story Development Process
+1. **Template Creation**: Copy existing story page (e.g., `/app/etihad/page.tsx`)
+2. **Content Development**: Update content, images, and styling using Claude Code
+3. **Responsive Testing**: Test across mobile and desktop breakpoints
+4. **Integration**: Link from homepage story tiles
+
 ### Git Workflow
-```
-main
-├── develop
-│   ├── feature/story-cards
-│   ├── feature/animations
-│   └── fix/mobile-menu
-```
+- Direct commits to main branch
+- Feature development using Claude Code assistance
+- Comprehensive commit messages with AI attribution
 
 ### Code Quality
 - ESLint configuration

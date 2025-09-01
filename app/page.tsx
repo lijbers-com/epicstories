@@ -119,6 +119,12 @@ export default function Home() {
             z-index: 1;
           }
 
+          @media (max-width: 767px) {
+            .top-circle {
+              bottom: -110px;
+            }
+          }
+
           @media (min-width: 768px) {
             .circles-object {
               height: 400px;
@@ -364,7 +370,7 @@ export default function Home() {
                     textAlign: 'center',
                     lineHeight: 1.4
                   }}>
-                    Met Yellowbello sta jij binnen drie simpele stappen lokaal bovenaan en bepaal je zelf waar je verkoopt.
+                    Local success made simple
                   </p>
                 </div>
               </motion.div>
@@ -432,7 +438,7 @@ export default function Home() {
                   margin: 0,
                   fontFamily: 'var(--font-outfit), "Outfit", sans-serif'
                 }}>
-                  What ever profile tag. Triggers a thought, reaction or other. Important to manage their expectation.
+                  Use quotes as memes to spark recognition and create learning moments. It's especially important to manage expectations when the quotes don't fully align with reality.
                 </p>
               </div>
               
@@ -474,9 +480,7 @@ export default function Home() {
                     '02-beleggen-is-goochelen.png',
                     '03-jaar-tussenuit.png',
                     '04-niet-doorwerk.png',
-                    '05-meer-werk-meer-pensioen.png',
                     '06-sociaal-pensioen.png',
-                    '07-pensioenpot.png',
                     '08-pensioenfonds-beheerd-geld.png'
                   ].map((img, index) => (
                     <Image 
@@ -498,9 +502,7 @@ export default function Home() {
                     '02-beleggen-is-goochelen.png',
                     '03-jaar-tussenuit.png',
                     '04-niet-doorwerk.png',
-                    '05-meer-werk-meer-pensioen.png',
                     '06-sociaal-pensioen.png',
-                    '07-pensioenpot.png',
                     '08-pensioenfonds-beheerd-geld.png'
                   ].map((img, index) => (
                     <Image 
@@ -637,6 +639,15 @@ export default function Home() {
                 <span style={{ display: 'block' }}>The best</span>
                 <span style={{ display: 'block' }}>pick-up lines</span>
               </h2>
+              <p style={{ 
+                fontSize: '16px',
+                color: '#f48c00',
+                lineHeight: '1.6',
+                margin: '20px 0 0 0',
+                fontFamily: 'var(--font-outfit), "Outfit", sans-serif'
+              }}>
+                For the best possible service: proactive, personal, and without any hurdles.
+              </p>
             </div>
           </motion.div>
           </Link>

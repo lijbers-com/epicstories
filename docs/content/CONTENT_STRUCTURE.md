@@ -253,24 +253,24 @@ type ContentBlock =
 
 ## Content Management
 
-### CMS Requirements
+### Individual Story Development
 
-#### Features Needed
-- Rich text editor
-- Media library
-- SEO fields
-- Preview functionality
-- Version control
-- Scheduled publishing
-- Content relationships
+Each client story is developed as a custom page with unique content and styling:
 
-#### Content Types
-1. **Stories** (main content)
-2. **Team Members**
-3. **Testimonials**
-4. **Technologies**
-5. **Services**
-6. **Global Settings**
+#### Development Process
+1. **Template Duplication**: Copy existing story page (e.g., `/app/etihad/page.tsx`)
+2. **Content Customization**: Update all text, images, and story-specific styling
+3. **Layout Adaptation**: Adjust sections, components, and visual hierarchy per story needs
+4. **Mobile Optimization**: Ensure responsive behavior across all devices
+5. **Integration**: Link from homepage story tiles to completed story pages
+
+#### Story Template Structure
+- Hero section with client branding
+- Problem statement and project overview
+- Process documentation with visuals
+- Results and impact metrics
+- Custom styling per client brand
+- Responsive image galleries
 
 ### Media Guidelines
 

@@ -5,8 +5,8 @@
 ## 🌟 Project Status
 
 ✅ **Setup Complete** - Next.js project initialized with custom design system  
-🏗️ **In Development** - Building core components and pages  
-🔄 **Next Steps** - Add CMS integration and story content  
+🏗️ **In Development** - Building individual story pages and content  
+🔄 **Next Steps** - Add more client stories using individual page approach  
 
 ## 🚀 Getting Started
 
@@ -82,10 +82,13 @@ npm run lint         # Run ESLint
 
 ### Development Workflow
 
-1. **Planning**: Check project documentation in `/docs`
-2. **Development**: Follow design system guidelines
-3. **Testing**: Test on multiple devices and browsers
-4. **Review**: Ensure code quality and accessibility
+Each client story is built as an individual page with custom content and styling:
+
+1. **Story Planning**: Define content structure and visual requirements
+2. **Template Duplication**: Copy existing story template (e.g., `/app/etihad/page.tsx`)
+3. **Content Customization**: Update copy, images, and story-specific styling using Claude Code
+4. **Responsive Testing**: Ensure mobile and desktop compatibility
+5. **Integration**: Link from homepage story tiles to new story pages
 
 ## 🎯 Features Roadmap
 
@@ -96,14 +99,14 @@ npm run lint         # Run ESLint
 - [x] Homepage structure with animations
 
 ### Phase 2: Core Features (In Progress)
-- [ ] Story listing/grid page
-- [ ] Individual story page template
-- [ ] About and Contact pages
-- [ ] Mobile responsiveness refinement
+- [x] Story listing/grid page (Homepage)
+- [x] Individual story page template (Etihad case study)
+- [x] About and Contact pages
+- [x] Mobile responsiveness refinement
 
-### Phase 3: Content & Polish
-- [ ] CMS integration (Contentful/Sanity)
-- [ ] Real content migration
+### Phase 3: Content & Stories
+- [ ] Individual story pages using Claude Code development
+- [ ] Story template duplication and customization
 - [ ] Performance optimization
 - [ ] SEO implementation
 
