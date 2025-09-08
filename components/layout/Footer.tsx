@@ -7,9 +7,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
   const pathname = usePathname()
   const isEtihadPage = pathname === '/etihad'
+  const isYellowbelloPage = pathname === '/yellowbello'
+  const isLightTheme = isEtihadPage || isYellowbelloPage
 
   return (
-    <footer style={{ backgroundColor: isEtihadPage ? '#FFFFFF' : '#544449' }}>
+    <footer style={{ backgroundColor: isYellowbelloPage ? '#E9E7E4' : isEtihadPage ? '#FFFFFF' : '#544449' }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '32px' }}>
         
         {/* Footer Brand */}
@@ -20,7 +22,7 @@ export default function Footer() {
               fontWeight: 'normal',
               fontFamily: 'var(--font-outfit), "Outfit", sans-serif',
               marginBottom: '5px',
-              color: isEtihadPage ? '#544449' : '#EEECED'
+              color: isLightTheme ? '#544449' : '#EEECED'
             }}
           >
             Epic Stories
@@ -87,7 +89,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div style={{ 
-          borderTop: `1px solid ${isEtihadPage ? 'rgba(84, 68, 73, 0.2)' : 'rgba(152, 143, 146, 0.2)'}`,
+          borderTop: `1px solid ${isLightTheme ? 'rgba(84, 68, 73, 0.2)' : 'rgba(152, 143, 146, 0.2)'}`,
           paddingTop: '24px'
         }}>
           <p style={{

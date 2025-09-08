@@ -309,7 +309,7 @@ export default function Home() {
             </Link>
 
             {/* Yellowbello Story (1/3 width on desktop) */}
-            <Link href="/digital-experiences" style={{ textDecoration: 'none', flex: '1 1 400px', minWidth: '0', maxWidth: '450px' }}>
+            <Link href="/yellowbello" style={{ textDecoration: 'none', flex: '1 1 400px', minWidth: '0', maxWidth: '450px' }}>
               <motion.div 
                 className="yellowbello-tile"
                 style={{ 
@@ -327,7 +327,7 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
               >
                 <Image 
-                  src="/content/yellowbello/Yellowbello_home.jpg"
+                  src="/content/yellowbello/Retailer_succes.jpg"
                   alt="Yellowbello"
                   width={450}
                   height={600}
@@ -354,7 +354,7 @@ export default function Home() {
                   <h2 style={{
                     fontSize: '140px',
                     fontWeight: '700',
-                    color: '#FFFF00',
+                    color: '#FBEB11',
                     margin: 0,
                     fontFamily: 'var(--font-titillium), "Titillium Web", sans-serif',
                     textAlign: 'center',
@@ -364,7 +364,7 @@ export default function Home() {
                   </h2>
                   <p style={{
                     fontSize: '18px',
-                    color: '#FFFF00',
+                    color: '#FBEB11',
                     margin: '20px 40px 0 40px',
                     fontFamily: 'var(--font-outfit), "Outfit", sans-serif',
                     textAlign: 'center',

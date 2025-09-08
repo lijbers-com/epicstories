@@ -11,8 +11,10 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   
-  // Check if we're on Etihad page for white theme
+  // Check if we're on Etihad or Yellowbello page for light theme
   const isEtihadPage = pathname === '/etihad'
+  const isYellowbelloPage = pathname === '/yellowbello'
+  const isLightTheme = isEtihadPage || isYellowbelloPage
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,9 +35,9 @@ export default function Navigation() {
 
   return (
     <motion.header 
-      className={`fixed top-0 left-0 right-0 w-full z-50 ${isEtihadPage ? 'text-gray-600' : 'text-white'}`}
+      className={`fixed top-0 left-0 right-0 w-full z-50 ${isLightTheme ? 'text-gray-600' : 'text-white'}`}
       style={{ 
-        backgroundColor: headerState === 'SCROLLED' ? 'transparent' : (isEtihadPage ? '#FFFFFF' : '#544449')
+        backgroundColor: headerState === 'SCROLLED' ? 'transparent' : (isYellowbelloPage ? '#E9E7E4' : isEtihadPage ? '#FFFFFF' : '#544449')
       }}
       initial={{ height: 'auto' }}
       animate={{
@@ -64,7 +66,7 @@ export default function Navigation() {
                 fontWeight: 'normal',
                 fontFamily: 'var(--font-outfit), "Outfit", sans-serif',
                 marginBottom: '5px',
-                color: isEtihadPage ? '#544449' : '#EEECED'
+                color: isLightTheme ? '#544449' : '#EEECED'
               }}
             >
               Epic Stories
@@ -109,7 +111,7 @@ export default function Navigation() {
               left: '0px',
               width: '24px',
               height: '2px',
-              backgroundColor: isEtihadPage ? '#544449' : 'white',
+              backgroundColor: isLightTheme ? '#544449' : 'white',
               display: 'block'
             }}
           />
@@ -122,7 +124,7 @@ export default function Navigation() {
               left: '0px',
               width: '24px',
               height: '2px',
-              backgroundColor: isEtihadPage ? '#544449' : 'white',
+              backgroundColor: isLightTheme ? '#544449' : 'white',
               display: 'block'
             }}
             animate={{
@@ -153,9 +155,9 @@ export default function Navigation() {
                       fontSize: '20px', 
                       fontFamily: 'var(--font-outfit), "Outfit", sans-serif', 
                       textDecoration: 'none',
-                      color: isEtihadPage ? '#544449' : 'white',
+                      color: isLightTheme ? '#544449' : 'white',
                       padding: '8px 0',
-                      borderBottom: index < links.length - 1 ? `1px solid ${isEtihadPage ? 'rgba(84,68,73,0.2)' : 'rgba(255,255,255,0.2)'}` : 'none'
+                      borderBottom: index < links.length - 1 ? `1px solid ${isLightTheme ? 'rgba(84,68,73,0.2)' : 'rgba(255,255,255,0.2)'}` : 'none'
                     }}
                   >
                     {link.label}
@@ -199,7 +201,7 @@ export default function Navigation() {
                   left: '0px',
                   width: '24px',
                   height: '2px',
-                  backgroundColor: isEtihadPage ? '#544449' : 'white',
+                  backgroundColor: isLightTheme ? '#544449' : 'white',
                   display: 'block'
                 }}
               />
@@ -212,7 +214,7 @@ export default function Navigation() {
                   left: '0px',
                   width: '24px',
                   height: '2px',
-                  backgroundColor: isEtihadPage ? '#544449' : 'white',
+                  backgroundColor: isLightTheme ? '#544449' : 'white',
                   display: 'block'
                 }}
                 animate={{
@@ -243,9 +245,9 @@ export default function Navigation() {
                           fontSize: '20px', 
                           fontFamily: 'var(--font-outfit), "Outfit", sans-serif', 
                           textDecoration: 'none',
-                          color: isEtihadPage ? '#544449' : 'white',
+                          color: isLightTheme ? '#544449' : 'white',
                           padding: '8px 0',
-                          borderBottom: index < links.length - 1 ? `1px solid ${isEtihadPage ? 'rgba(84,68,73,0.2)' : 'rgba(255,255,255,0.2)'}` : 'none'
+                          borderBottom: index < links.length - 1 ? `1px solid ${isLightTheme ? 'rgba(84,68,73,0.2)' : 'rgba(255,255,255,0.2)'}` : 'none'
                         }}
                       >
                         {link.label}
